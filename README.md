@@ -8,6 +8,8 @@ A production-ready microservice written in Go that acts as an **AI Gateway and H
 
 The service consumes generation tasks asynchronously from a **Redis Queue**, executes prompt sanitization and prompt injection defense, dispatches generation calls to OpenRouter with automatic model fallback and retries, enforces strict schema validation with automatic repair retries, and persists results with TTL in Redis.
 
+> 📖 **Guía para Backend:** Consulta la [Guía de Integración Backend (API_INTEGRATION.md)](API_INTEGRATION.md) para ver la especificación completa de payloads, esquemas de respuesta, códigos de error y ejemplos de código listos para usar (Node.js, Python, Go).
+
 ---
 
 ## Architecture Overview
@@ -337,4 +339,4 @@ A CLI utility is provided in `cmd/producer/main.go` to push tasks and observe re
 
 ## License
 
-All Fitness Microservices © 2026. Distributed under the MIT License.
+Distributed under the MIT License.

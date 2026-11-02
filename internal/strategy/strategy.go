@@ -33,9 +33,7 @@ func CleanJSONResponse(raw string) []byte {
 	}
 
 	// Remove trailing ```
-	if strings.HasSuffix(trimmed, "```") {
-		trimmed = strings.TrimSuffix(trimmed, "```")
-	}
+	trimmed = strings.TrimSuffix(trimmed, "```")
 
 	return []byte(strings.TrimSpace(trimmed))
 }
