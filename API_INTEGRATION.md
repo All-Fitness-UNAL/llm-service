@@ -539,3 +539,4 @@ func RequestWorkout(ctx context.Context, rdb *redis.Client) (*WorkoutResult, err
 	}
 }
 ```
+
