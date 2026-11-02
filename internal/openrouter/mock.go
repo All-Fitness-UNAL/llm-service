@@ -25,9 +25,9 @@ func (m *MockClient) GenerateWithFallback(ctx context.Context, messages []ChatMe
 		return `{"name": "Broken Workout", "exercises": [INVALID_JSON_HERE`, "mock/broken-model", nil
 	}
 
-	modelUsed := "anthropic/claude-3.5-sonnet"
+	modelUsed := "xiaomi/mimo-v2.6-flash"
 	if m.ShouldFailPrimary {
-		modelUsed = "openai/gpt-4o-mini"
+		modelUsed = "nvidia/nemotron-3-ultra-550b-a55b:free"
 	}
 
 	// Look at the prompt content to determine type

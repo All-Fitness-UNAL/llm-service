@@ -192,7 +192,7 @@ El backend debe leer esta clave mediante un comando `GET`.
   "error_code": "",
   "error_message": "",
   "execution_time_ms": 3420,
-  "model_used": "anthropic/claude-3.5-sonnet",
+  "model_used": "xiaomi/mimo-v2.6-flash",
   "repair_attempts": 0,
   "completed_at": "2026-11-02T15:30:04.120Z"
 }

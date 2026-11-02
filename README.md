@@ -51,9 +51,9 @@ The service consumes generation tasks asynchronously from a **Redis Queue**, exe
 │                                        │                                         │
 │   ┌────────────────────────────────────▼─────────────────────────────────────┐   │
 │   │                     3. OpenRouter Client & Resilience                    │   │
-│   │  - Primary Model (anthropic/claude-3.5-sonnet)                           │   │
+│   │  - Primary Model (xiaomi/mimo-v2.6-flash)                                │   │
 │   │  - Exponential backoff with jitter on HTTP 429 & 5xx                     │   │
-│   │  - Seamless Secondary Fallback Model (openai/gpt-4o-mini)                │   │
+│   │  - Secondary Fallback Model (nvidia/nemotron-3-ultra-550b-a55b:free)     │   │
 │   └────────────────────────────────────┬─────────────────────────────────────┘   │
 │                                        │                                         │
 │   ┌────────────────────────────────────▼─────────────────────────────────────┐   │
@@ -102,7 +102,7 @@ The service consumes generation tasks asynchronously from a **Redis Queue**, exe
 - Direct HTTP POST calls to OpenRouter (`https://openrouter.ai/api/v1/chat/completions`).
 - Strict JSON enforcement with `response_format: { "type": "json_object" }`.
 - Configurable retry policy with exponential backoff and jitter on HTTP 429 and 5xx errors.
-- Automatic model fallback from Primary model (`anthropic/claude-3.5-sonnet`) to Secondary model (`openai/gpt-4o-mini`).
+- Automatic model fallback from Primary model (`xiaomi/mimo-v2.6-flash`) to Secondary model (`nvidia/nemotron-3-ultra-550b-a55b:free`).
 - Built-in Mock Mode (`MOCK_OPENROUTER=true`) for local development and offline testing.
 
 ### 5. Strict Data Validation & Automatic Schema Repair
@@ -158,8 +158,8 @@ The service consumes generation tasks asynchronously from a **Redis Queue**, exe
 | `MAX_REPAIR_RETRIES` | `2` | Maximum schema repair retries per task |
 | `OPENROUTER_API_KEY` | `""` | OpenRouter API authentication token |
 | `OPENROUTER_BASE_URL` | `https://openrouter.ai/api/v1` | OpenRouter API base URL |
-| `OPENROUTER_PRIMARY_MODEL` | `anthropic/claude-3.5-sonnet` | Primary generation model |
-| `OPENROUTER_FALLBACK_MODEL` | `openai/gpt-4o-mini` | Secondary model fallback |
+| `OPENROUTER_PRIMARY_MODEL` | `xiaomi/mimo-v2.6-flash` | Primary generation model |
+| `OPENROUTER_FALLBACK_MODEL` | `nvidia/nemotron-3-ultra-550b-a55b:free` | Secondary model fallback |
 | `OPENROUTER_MAX_RETRIES` | `3` | HTTP retries per model on 429/5xx |
 | `OPENROUTER_TIMEOUT` | `60s` | HTTP request timeout |
 | `PROMPTS_DIR` | `./prompts` | Path to directory containing `.tmpl` files |
@@ -303,7 +303,7 @@ A CLI utility is provided in `cmd/producer/main.go` to push tasks and observe re
     ]
   },
   "execution_time_ms": 1420,
-  "model_used": "anthropic/claude-3.5-sonnet",
+  "model_used": "xiaomi/mimo-v2.6-flash",
   "repair_attempts": 0,
   "completed_at": "2026-10-30T19:45:02Z"
 }

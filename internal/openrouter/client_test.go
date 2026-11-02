@@ -26,7 +26,7 @@ func TestOpenRouterClient_SuccessPrimary(t *testing.T) {
 
 		resp := ChatCompletionResponse{
 			ID:    "gen-123",
-			Model: "anthropic/claude-3.5-sonnet",
+			Model: "xiaomi/mimo-v2.6-flash",
 			Choices: []Choice{
 				{
 					Index: 0,
@@ -45,8 +45,8 @@ func TestOpenRouterClient_SuccessPrimary(t *testing.T) {
 	cfg := &config.Config{
 		OpenRouterAPIKey:        "test-key",
 		OpenRouterBaseURL:       server.URL,
-		OpenRouterPrimaryModel:  "anthropic/claude-3.5-sonnet",
-		OpenRouterFallbackModel: "openai/gpt-4o-mini",
+		OpenRouterPrimaryModel:  "xiaomi/mimo-v2.6-flash",
+		OpenRouterFallbackModel: "nvidia/nemotron-3-ultra-550b-a55b:free",
 		OpenRouterSiteURL:       "https://allfitness.com",
 		OpenRouterAppName:       "All Fitness AI Gateway",
 		OpenRouterMaxRetries:    2,
@@ -61,7 +61,7 @@ func TestOpenRouterClient_SuccessPrimary(t *testing.T) {
 	if err != nil {
 		t.Fatalf("unexpected error: %v", err)
 	}
-	if model != "anthropic/claude-3.5-sonnet" {
+	if model != "xiaomi/mimo-v2.6-flash" {
 		t.Errorf("expected primary model, got: %s", model)
 	}
 	if !strings.Contains(res, "Leg Day") {
@@ -77,18 +77,18 @@ func TestOpenRouterClient_FallbackOnPrimaryFailure(t *testing.T) {
 		var req ChatCompletionRequest
 		_ = json.NewDecoder(r.Body).Decode(&req)
 
-		if req.Model == "anthropic/claude-3.5-sonnet" {
+		if req.Model == "xiaomi/mimo-v2.6-flash" {
 			atomic.AddInt32(&primaryCalls, 1)
 			// Return 503 Service Unavailable for primary
 			http.Error(w, `{"error": {"message": "Model overloaded"}}`, http.StatusServiceUnavailable)
 			return
 		}
 
-		if req.Model == "openai/gpt-4o-mini" {
+		if req.Model == "nvidia/nemotron-3-ultra-550b-a55b:free" {
 			atomic.AddInt32(&fallbackCalls, 1)
 			resp := ChatCompletionResponse{
 				ID:    "gen-456",
-				Model: "openai/gpt-4o-mini",
+				Model: "nvidia/nemotron-3-ultra-550b-a55b:free",
 				Choices: []Choice{
 					{
 						Index: 0,
@@ -111,8 +111,8 @@ func TestOpenRouterClient_FallbackOnPrimaryFailure(t *testing.T) {
 	cfg := &config.Config{
 		OpenRouterAPIKey:        "test-key",
 		OpenRouterBaseURL:       server.URL,
-		OpenRouterPrimaryModel:  "anthropic/claude-3.5-sonnet",
-		OpenRouterFallbackModel: "openai/gpt-4o-mini",
+		OpenRouterPrimaryModel:  "xiaomi/mimo-v2.6-flash",
+		OpenRouterFallbackModel: "nvidia/nemotron-3-ultra-550b-a55b:free",
 		OpenRouterMaxRetries:    2,
 		OpenRouterTimeout:       5 * time.Second,
 	}
@@ -125,7 +125,7 @@ func TestOpenRouterClient_FallbackOnPrimaryFailure(t *testing.T) {
 	if err != nil {
 		t.Fatalf("unexpected error: %v", err)
 	}
-	if model != "openai/gpt-4o-mini" {
+	if model != "nvidia/nemotron-3-ultra-550b-a55b:free" {
 		t.Errorf("expected fallback model, got: %s", model)
 	}
 	if !strings.Contains(res, "Fallback Routine") {
@@ -154,7 +154,7 @@ func TestOpenRouterClient_RetryOn429(t *testing.T) {
 		// Second call succeeds
 		resp := ChatCompletionResponse{
 			ID:    "gen-789",
-			Model: "anthropic/claude-3.5-sonnet",
+			Model: "xiaomi/mimo-v2.6-flash",
 			Choices: []Choice{
 				{
 					Message: ChatMessage{
@@ -172,8 +172,8 @@ func TestOpenRouterClient_RetryOn429(t *testing.T) {
 	cfg := &config.Config{
 		OpenRouterAPIKey:        "test-key",
 		OpenRouterBaseURL:       server.URL,
-		OpenRouterPrimaryModel:  "anthropic/claude-3.5-sonnet",
-		OpenRouterFallbackModel: "openai/gpt-4o-mini",
+		OpenRouterPrimaryModel:  "xiaomi/mimo-v2.6-flash",
+		OpenRouterFallbackModel: "nvidia/nemotron-3-ultra-550b-a55b:free",
 		OpenRouterMaxRetries:    3,
 		OpenRouterTimeout:       5 * time.Second,
 	}

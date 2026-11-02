@@ -74,7 +74,7 @@ func TestTaskResult_Serialization(t *testing.T) {
 		Status:          StatusSuccess,
 		Data:            json.RawMessage(`{"name": "Upper Body"}`),
 		ExecutionTimeMs: 125,
-		ModelUsed:       "anthropic/claude-3.5-sonnet",
+		ModelUsed:       "xiaomi/mimo-v2.6-flash",
 		RepairAttempts:  0,
 		CompletedAt:     time.Now().UTC(),
 	}

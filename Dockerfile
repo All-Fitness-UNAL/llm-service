@@ -45,8 +45,8 @@ ENV APP_ENV=production \
     REDIS_TASK_QUEUE=allfitness:tasks:queue \
     REDIS_RESULT_PREFIX=allfitness:results: \
     REDIS_RESULT_TTL=15m \
-    OPENROUTER_PRIMARY_MODEL=anthropic/claude-3.5-sonnet \
-    OPENROUTER_FALLBACK_MODEL=openai/gpt-4o-mini \
+    OPENROUTER_PRIMARY_MODEL=xiaomi/mimo-v2.6-flash \
+    OPENROUTER_FALLBACK_MODEL=nvidia/nemotron-3-ultra-550b-a55b:free \
     PROMPTS_DIR=/app/prompts
 
 ENTRYPOINT ["/app/worker"]
