@@ -5,7 +5,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/allfitness/ai-gateway/internal/domain"
+	"github.com/All-Fitness-UNAL/llm-service/internal/domain"
 )
 
 func TestSanitizer_CheckInjection(t *testing.T) {
@@ -98,3 +98,4 @@ func TestSanitizer_SanitizeUserProfile(t *testing.T) {
 		t.Fatalf("expected error detecting injection in user profile, got nil")
 	}
 }
+

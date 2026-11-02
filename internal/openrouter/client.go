@@ -14,8 +14,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/allfitness/ai-gateway/internal/config"
-	"github.com/allfitness/ai-gateway/internal/domain"
+	"github.com/All-Fitness-UNAL/llm-service/internal/config"
+	"github.com/All-Fitness-UNAL/llm-service/internal/domain"
 )
 
 var (
@@ -286,3 +286,4 @@ func (c *OpenRouterClient) sleepWithJitter(ctx context.Context, attempt int, ove
 	case <-time.After(total):
 	}
 }
+

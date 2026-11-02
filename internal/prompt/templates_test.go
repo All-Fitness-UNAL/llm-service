@@ -5,7 +5,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/allfitness/ai-gateway/internal/domain"
+	"github.com/All-Fitness-UNAL/llm-service/internal/domain"
 )
 
 func TestTemplateManager_Render(t *testing.T) {
@@ -45,3 +45,4 @@ func TestTemplateManager_Render(t *testing.T) {
 		t.Errorf("expected equipment in user prompt, got: %s", user)
 	}
 }
+

@@ -8,9 +8,9 @@ import (
 	"log"
 	"time"
 
-	"github.com/allfitness/ai-gateway/internal/config"
-	"github.com/allfitness/ai-gateway/internal/domain"
-	"github.com/allfitness/ai-gateway/internal/queue"
+	"github.com/All-Fitness-UNAL/llm-service/internal/config"
+	"github.com/All-Fitness-UNAL/llm-service/internal/domain"
+	"github.com/All-Fitness-UNAL/llm-service/internal/queue"
 )
 
 func main() {
@@ -165,3 +165,4 @@ func (b *bytesBuffer) format(data []byte) error {
 func (b *bytesBuffer) String() string {
 	return b.content
 }
+

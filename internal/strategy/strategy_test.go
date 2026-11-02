@@ -3,8 +3,8 @@ package strategy
 import (
 	"testing"
 
-	"github.com/allfitness/ai-gateway/internal/domain"
-	"github.com/allfitness/ai-gateway/internal/prompt"
+	"github.com/All-Fitness-UNAL/llm-service/internal/domain"
+	"github.com/All-Fitness-UNAL/llm-service/internal/prompt"
 )
 
 func TestCleanJSONResponse(t *testing.T) {
@@ -114,3 +114,4 @@ func TestRecipeStrategy_ValidateAndParse(t *testing.T) {
 		t.Errorf("unexpected ingredients format: %s", recipeArr.Ingredients)
 	}
 }
+

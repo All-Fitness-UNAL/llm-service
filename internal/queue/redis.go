@@ -7,8 +7,8 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/allfitness/ai-gateway/internal/config"
-	"github.com/allfitness/ai-gateway/internal/domain"
+	"github.com/All-Fitness-UNAL/llm-service/internal/config"
+	"github.com/All-Fitness-UNAL/llm-service/internal/domain"
 	"github.com/redis/go-redis/v9"
 )
 
@@ -117,3 +117,4 @@ func (q *RedisQueue) GetResult(ctx context.Context, requestID string) (*domain.T
 	}
 	return &res, nil
 }
+

@@ -6,7 +6,7 @@ import (
 	"strings"
 	"unicode"
 
-	"github.com/allfitness/ai-gateway/internal/domain"
+	"github.com/All-Fitness-UNAL/llm-service/internal/domain"
 )
 
 // Sanitizer provides prompt injection detection and PII scrubbing.
@@ -150,3 +150,4 @@ func (s *Sanitizer) normalizeText(text string) string {
 	spaceRegex := regexp.MustCompile(`[ \t]+`)
 	return spaceRegex.ReplaceAllString(cleaned, " ")
 }
+

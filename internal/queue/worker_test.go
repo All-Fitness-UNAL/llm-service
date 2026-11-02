@@ -7,11 +7,11 @@ import (
 	"testing"
 	"time"
 
-	"github.com/allfitness/ai-gateway/internal/config"
-	"github.com/allfitness/ai-gateway/internal/domain"
-	"github.com/allfitness/ai-gateway/internal/openrouter"
-	"github.com/allfitness/ai-gateway/internal/prompt"
-	"github.com/allfitness/ai-gateway/internal/strategy"
+	"github.com/All-Fitness-UNAL/llm-service/internal/config"
+	"github.com/All-Fitness-UNAL/llm-service/internal/domain"
+	"github.com/All-Fitness-UNAL/llm-service/internal/openrouter"
+	"github.com/All-Fitness-UNAL/llm-service/internal/prompt"
+	"github.com/All-Fitness-UNAL/llm-service/internal/strategy"
 )
 
 // In-memory test queue
@@ -194,3 +194,4 @@ func TestWorker_SchemaRepairRetry(t *testing.T) {
 		t.Errorf("expected 1 repair attempt, got %d", res.RepairAttempts)
 	}
 }
+

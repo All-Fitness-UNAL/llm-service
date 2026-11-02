@@ -7,11 +7,11 @@ import (
 	"os/signal"
 	"syscall"
 
-	"github.com/allfitness/ai-gateway/internal/config"
-	"github.com/allfitness/ai-gateway/internal/openrouter"
-	"github.com/allfitness/ai-gateway/internal/prompt"
-	"github.com/allfitness/ai-gateway/internal/queue"
-	"github.com/allfitness/ai-gateway/internal/strategy"
+	"github.com/All-Fitness-UNAL/llm-service/internal/config"
+	"github.com/All-Fitness-UNAL/llm-service/internal/openrouter"
+	"github.com/All-Fitness-UNAL/llm-service/internal/prompt"
+	"github.com/All-Fitness-UNAL/llm-service/internal/queue"
+	"github.com/All-Fitness-UNAL/llm-service/internal/strategy"
 )
 
 func main() {
@@ -100,3 +100,4 @@ func setupLogger(cfg *config.Config) {
 
 	slog.SetDefault(slog.New(handler))
 }
+

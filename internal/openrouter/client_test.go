@@ -11,7 +11,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/allfitness/ai-gateway/internal/config"
+	"github.com/All-Fitness-UNAL/llm-service/internal/config"
 )
 
 func TestOpenRouterClient_SuccessPrimary(t *testing.T) {
@@ -214,3 +214,4 @@ func TestMockClient_RepairJSON(t *testing.T) {
 		t.Errorf("unexpected repaired content: %s", repaired)
 	}
 }
+

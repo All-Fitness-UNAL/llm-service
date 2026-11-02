@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"sync"
 
-	"github.com/allfitness/ai-gateway/internal/domain"
-	"github.com/allfitness/ai-gateway/internal/prompt"
+	"github.com/All-Fitness-UNAL/llm-service/internal/domain"
+	"github.com/All-Fitness-UNAL/llm-service/internal/prompt"
 )
 
 // Registry manages and routes strategies for different request types.
@@ -45,3 +45,4 @@ func (r *Registry) Get(rt domain.RequestType) (Strategy, error) {
 	}
 	return s, nil
 }
+

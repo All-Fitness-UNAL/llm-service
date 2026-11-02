@@ -5,9 +5,9 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/allfitness/ai-gateway/internal/domain"
-	"github.com/allfitness/ai-gateway/internal/openrouter"
-	"github.com/allfitness/ai-gateway/internal/prompt"
+	"github.com/All-Fitness-UNAL/llm-service/internal/domain"
+	"github.com/All-Fitness-UNAL/llm-service/internal/openrouter"
+	"github.com/All-Fitness-UNAL/llm-service/internal/prompt"
 )
 
 // RecipeStrategy handles GENERATE_RECIPE requests.
@@ -124,3 +124,4 @@ func (s *RecipeStrategy) SchemaDefinition() string {
   ]
 }`
 }
+

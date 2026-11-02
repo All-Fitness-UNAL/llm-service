@@ -9,11 +9,11 @@ import (
 	"sync"
 	"time"
 
-	"github.com/allfitness/ai-gateway/internal/config"
-	"github.com/allfitness/ai-gateway/internal/domain"
-	"github.com/allfitness/ai-gateway/internal/openrouter"
-	"github.com/allfitness/ai-gateway/internal/prompt"
-	"github.com/allfitness/ai-gateway/internal/strategy"
+	"github.com/All-Fitness-UNAL/llm-service/internal/config"
+	"github.com/All-Fitness-UNAL/llm-service/internal/domain"
+	"github.com/All-Fitness-UNAL/llm-service/internal/openrouter"
+	"github.com/All-Fitness-UNAL/llm-service/internal/prompt"
+	"github.com/All-Fitness-UNAL/llm-service/internal/strategy"
 )
 
 // WorkerPool manages concurrent worker goroutines that ingest and process tasks.
@@ -251,3 +251,4 @@ func (p *WorkerPool) persistResult(ctx context.Context, result *domain.TaskResul
 		slog.Error("failed to persist result to redis", "request_id", result.RequestID, "error", err)
 	}
 }
+

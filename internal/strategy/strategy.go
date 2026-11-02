@@ -3,8 +3,8 @@ package strategy
 import (
 	"strings"
 
-	"github.com/allfitness/ai-gateway/internal/domain"
-	"github.com/allfitness/ai-gateway/internal/openrouter"
+	"github.com/All-Fitness-UNAL/llm-service/internal/domain"
+	"github.com/All-Fitness-UNAL/llm-service/internal/openrouter"
 )
 
 // Strategy defines the interface for task-specific prompt construction and output validation.
@@ -39,3 +39,4 @@ func CleanJSONResponse(raw string) []byte {
 
 	return []byte(strings.TrimSpace(trimmed))
 }
+

@@ -9,7 +9,7 @@ import (
 	"strings"
 	"text/template"
 
-	"github.com/allfitness/ai-gateway/internal/domain"
+	"github.com/All-Fitness-UNAL/llm-service/internal/domain"
 )
 
 //go:embed templates_embedded/*.tmpl
@@ -90,3 +90,4 @@ func (tm *TemplateManager) Render(templateName string, task *domain.TaskPayload)
 
 	return systemPrompt, userPrompt, nil
 }
+
