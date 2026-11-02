@@ -51,3 +51,10 @@ temp/
 Thumbs.db
 ehthumbs.db
 Desktop.ini
+
+# Local-only test reports
+TEST_RESULTS.md
+
+# Local build binaries
+worker_bin
+producer_bin
